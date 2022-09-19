@@ -42,13 +42,13 @@ static String readFirstLineFromFileWithFinallyBlock(String path) throws IOExcept
 -   리소스는 프로그램이 완료된 후 닫아야 하는 객체이다.
 -   try-with resources 문을 사용하면 close()를 호출해서, 리소스를 안전하게 닫아준다.
 
-### [](https://github.com/Chan-Pumpkin/Tech_TIL/blob/master/Java/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D/8_3_try_with_resource.md#%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95)**사용 방법**
+### [](https://github.com/Chan-Pumpkin/Tech_TIL/blob/master/Java/%EC%9E%90%EB%B0%94%EC%9D%98%EC%A0%95%EC%84%9D/8_3_try_with_resource.md#%EC%82%AC%EC%9A%A9-%EB%B0%A9%EB%B2%95)**설명**
 
 -   FileReader 및 BufferedReader는 프로그램이 완료된 후 닫아야 하는 리소스(객체)이다.
 -   FileReader 와 BufferedReader는 Java SE 7이상에서, java.lang.AutoCloseable 구현한다.
 -   FileReader 및 BufferedReader 인스턴스는 try-with-resource 문에서 선언되므로 try 문이 정상적 또는 급작스럽게 완료되는지 여부 관계없이 자동으로 닫힌다.
 
-```
+``` java
 static String readFirstLineFromFile(String path) throws IOException {
 	    try (FileReader fr = new FileReader(path);
 	         BufferedReader br = new BufferedReader(fr)) {
